@@ -1,4 +1,4 @@
-import Navbar from "./index.tsx";
+import Navbar from "./index";
 
 
 function App() {

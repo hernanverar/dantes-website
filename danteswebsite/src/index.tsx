@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { Bars2Icon, XMarkIcon } from '@heroicons/react/24/solid';
+// import { useState } from 'react';
+// import { Bars2Icon, XMarkIcon } from '@heroicons/react/24/solid';
 import Logo from "@/assets/Logo.png";
+// import { feConvolveMatrix } from "framer-motion/client";
 
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const flexBetween = "flex items-center justify-between";
 
@@ -17,27 +17,21 @@ const Navbar = () => {
             <img alt="logo" src={Logo} />
 
             {/* Right side - Menu Toggle */}
-            <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="p-2 focus:outline-none">
-              {isMenuOpen ? (
-                <XMarkIcon className="h-6 w-6 text-black" />
-              ) : (
-                <Bars2Icon className="h-6 w-6 text-black" />
-              )}
-            </button>
+           <div className={`${flexBetween} w-full`}>
+            <div className={`${flexBetween} gap-8 text-sm`}>
+                <p>Inicio</p>
+                <p>Requisitos</p>
+                <p>Testimonios</p>
+                <p>Contacto</p>        
+            </div>
+            <div className={`${flexBetween} gap-8`}>
+                <p>Inicia sesion</p>
+                
+            </div>
+           </div>
           </div>
         </div>  
       </div>
-
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="fixed top-16 left-0 w-full bg-gray-100 p-6 shadow-md">
-          <ul className="space-y-4">
-            <li><a href="#" className="text-lg font-medium">Home</a></li>
-            <li><a href="#" className="text-lg font-medium">About</a></li>
-            <li><a href="#" className="text-lg font-medium">Contact</a></li>
-          </ul>
-        </div>
-      )}
     </nav>
   );
 };

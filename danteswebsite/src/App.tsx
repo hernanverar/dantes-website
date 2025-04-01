@@ -1,12 +1,20 @@
-import Navbar from "./index";
+import { useState } from "react";
+import Navbar from "./navbar";
+import { SelectedPage } from "./shared/types"; 
+
 
 
 function App() {
+  const [selectedPage, setSelectedPage] = useState<SelectedPage>(
+    SelectedPage.Inicio
+  );
+
   return (
     <div className="app bg-gray-20 ">
-      <Navbar />
+      <Navbar selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
+

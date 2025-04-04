@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import Navbar from "./navbar";
-import Home from "./home/home.tsx"
+import Home from "./home/home.tsx";
+import Footer from "./scenes/footer";
 import { SelectedPage } from "./shared/types"; 
-
 
 
 function App() {
@@ -32,6 +32,7 @@ function App() {
         setSelectedPage={setSelectedPage}
       />
       <Home setSelectedPage={setSelectedPage} />
+      <Footer />
     </div>
   );
 }
